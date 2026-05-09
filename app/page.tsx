@@ -4,9 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logoImg from '@/public/assets/logo.png';
 import tradingviewImg from '@/public/assets/tradingview.png';
-import book1Img from '@/public/assets/book1.png';
-import book2Img from '@/public/assets/book2.png';
 import whatsappImg from '@/public/assets/whatsapp.png';
+
+const book1Img = "https://i.pinimg.com/1200x/3a/91/c4/3a91c4f0974a59e90278b11841e9c92f.jpg";
+const book2Img = "https://i.pinimg.com/1200x/ed/43/5c/ed435c1ee75c704e210b4ed1e57002bd.jpg";
 
 export default function Home() {
   return (
@@ -608,7 +609,7 @@ export default function Home() {
 
       {/* WhatsApp Floating Button */}
       <a 
-        href="https://wa.me/917574002596?text=Can%20I%20get%20more%20info%20..%3F" 
+        href="https://wa.me/916361329208?text=Can%20I%20get%20more%20info%20..%3F" 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 w-24 h-24 md:w-32 md:h-32 transition-transform hover:scale-110"
