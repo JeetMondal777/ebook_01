@@ -501,9 +501,11 @@ export default function Home() {
                   </div>
                   <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
-                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
-                  Absolutely. The bundle is structured to work for all levels — from understanding what a candlestick is to mastering advanced options strategies. We start with fundamentals and progress to expert-level concepts.
-                </p>
+                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
+                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    Absolutely. The bundle is structured to work for all levels — from understanding what a candlestick is to mastering advanced options strategies. We start with fundamentals and progress to expert-level concepts.
+                  </p>
+                </div>
               </div>
 
               {/* FAQ Item 2 */}
@@ -515,9 +517,11 @@ export default function Home() {
                   </div>
                   <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
-                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
-                  Immediately after payment, you&apos;ll receive a download link on-screen and via email. All 15 e-books in PDF format — instant access, no waiting. Download and keep them forever.
-                </p>
+                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
+                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    Immediately after payment, you&apos;ll receive a download link on-screen and via email. All 15 e-books in PDF format — instant access, no waiting. Download and keep them forever.
+                  </p>
+                </div>
               </div>
 
               {/* FAQ Item 3 */}
@@ -529,9 +533,11 @@ export default function Home() {
                   </div>
                   <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
-                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
-                  Yes. While focused on stock markets, the core principles — technical analysis, risk management, trading psychology — apply across all financial markets including crypto, forex, and commodities.
-                </p>
+                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
+                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    Yes. While focused on stock markets, the core principles — technical analysis, risk management, trading psychology — apply across all financial markets including crypto, forex, and commodities.
+                  </p>
+                </div>
               </div>
 
               {/* FAQ Item 4 */}
@@ -543,9 +549,11 @@ export default function Home() {
                   </div>
                   <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
-                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
-                  Once purchased, the PDFs are yours to keep forever. Download them anytime, access on any device — phone, tablet, laptop, or Kindle. No recurring fees, ever.
-                </p>
+                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
+                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    Once purchased, the PDFs are yours to keep forever. Download them anytime, access on any device — phone, tablet, laptop, or Kindle. No recurring fees, ever.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
