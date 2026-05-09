@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logoImg from '@/public/assets/logo.png';
@@ -10,6 +11,8 @@ const book1Img = "https://i.pinimg.com/1200x/3a/91/c4/3a91c4f0974a59e90278b11841
 const book2Img = "https://i.pinimg.com/1200x/ed/43/5c/ed435c1ee75c704e210b4ed1e57002bd.jpg";
 
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <>
       <style>{`
@@ -308,173 +311,142 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Unique Review Showcase: The Ledger of Success */}
-        <section className="py-20 bg-background overflow-hidden">
-          <div className="px-5 md:px-16 max-w-[1280px] mx-auto mb-12 text-center">
-            <h2 className="font-headline-md text-headline-md text-primary-container">The Ledger of Success</h2>
-            <p className="font-body-md text-body-md text-on-surface-variant mt-2">Verified Intelligence from Elite Members</p>
+        {/* Review Section */}
+        <section className="py-10 md:py-20 bg-background overflow-hidden">
+          <div className="px-4 md:px-16 max-w-[1280px] mx-auto mb-6 md:mb-12 text-center">
+            <h2 className="font-headline-sm md:font-headline-md text-[20px] md:text-headline-md text-primary-container">The Ledger of Success</h2>
+            <p className="font-body-md text-xs md:text-base text-on-surface-variant mt-1">Verified Intelligence from Elite Members</p>
           </div>
           <div className="relative w-full">
-            <div className="ticker-track gap-6 px-6">
-              {/* Duplicated for continuous scroll effect */}
-              <div className="flex gap-6">
+            <div className="ticker-track gap-3 md:gap-6 px-3 md:px-6">
+              <div className="flex gap-3 md:gap-6">
                 {/* Review 1 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;The clarity on institutional order flow changed everything. It&apos;s not just theory, it&apos;s actionable strategy.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;The clarity on institutional order flow changed everything.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">JM</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">JM</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">J. Mitchell</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">J. Mitchell</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 2 */}
-                <div className="w-96 flex-shrink-0 bg-primary-container text-on-primary p-8 ambient-shadow flex flex-col justify-between transform -translate-y-4">
-                  <div className="mb-6">
-                    <span className="material-symbols-outlined text-secondary text-[32px] mb-2">format_quote</span>
-                    <p className="font-headline-sm font-normal leading-tight">&quot;I recovered my entire initial investment within the first week of applying the Candlestick methodologies.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;I recovered my entire investment in first week.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-secondary border-opacity-30 pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-primary-container">SP</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">SP</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-secondary-fixed">S. Patel</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary-fixed">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">S. Patel</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 3 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;Finally, a resource that cuts through the retail noise. Pure, unadulterated market mechanics.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Finally, a resource that cuts through retail noise.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">AR</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">AR</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">A. Reynolds</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">A. Reynolds</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 4 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between transform translate-y-4">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;The risk management frameworks alone are worth 10x the price of this bundle.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Risk management frameworks worth 10x price.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">EC</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">EC</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">E. Chen</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">E. Chen</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Duplicate for seamless loop */}
-              <div className="flex gap-6">
+              <div className="flex gap-3 md:gap-6">
                 {/* Review 1 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;The clarity on institutional order flow changed everything. It&apos;s not just theory, it&apos;s actionable strategy.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;The clarity on institutional order flow changed everything.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">JM</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">JM</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">J. Mitchell</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">J. Mitchell</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 2 */}
-                <div className="w-96 flex-shrink-0 bg-primary-container text-on-primary p-8 ambient-shadow flex flex-col justify-between transform -translate-y-4">
-                  <div className="mb-6">
-                    <span className="material-symbols-outlined text-secondary text-[32px] mb-2">format_quote</span>
-                    <p className="font-headline-sm font-normal leading-tight">&quot;I recovered my entire initial investment within the first week of applying the Candlestick methodologies.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;I recovered my entire investment in first week.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-secondary border-opacity-30 pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-primary-container">SP</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">SP</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-secondary-fixed">S. Patel</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary-fixed">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">S. Patel</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 3 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;Finally, a resource that cuts through the retail noise. Pure, unadulterated market mechanics.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Finally, a resource that cuts through retail noise.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">AR</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">AR</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">A. Reynolds</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">A. Reynolds</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 4 */}
-                <div className="w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-6 ambient-shadow flex flex-col justify-between transform translate-y-4">
-                  <div className="mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[32px] mb-2">format_quote</span>
-                    <p className="font-body-md text-body-md text-primary-container italic">&quot;The risk management frameworks alone are worth 10x the price of this bundle.&quot;</p>
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                  <div className="mb-2 md:mb-4">
+                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Risk management frameworks worth 10x price.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary">EC</span>
+                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">EC</span>
                       </div>
-                      <span className="font-numeric-data text-numeric-data text-on-surface-variant font-medium">E. Chen</span>
-                    </div>
-                    <div className="flex items-center gap-1 text-secondary">
-                      <span className="material-symbols-outlined text-[16px]">verified</span>
-                      <span className="font-label-caps text-[10px] tracking-wider">Verified</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">E. Chen</span>
                     </div>
                   </div>
                 </div>
@@ -484,74 +456,94 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-surface-container-lowest px-5 md:px-16 max-w-[1280px] mx-auto">
+        <section className="py-12 md:py-20 bg-surface-container-lowest px-4 md:px-16 max-w-[1280px] mx-auto">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-10">
-              <p className="font-body-md text-body-md text-on-surface-variant">
+            <div className="text-center mb-8">
+              <p className="font-body-md text-sm md:text-base text-on-surface-variant">
                 Have questions? We&apos;ve got answers.
               </p>
             </div>
             <div className="space-y-0">
               {/* FAQ Item 1 */}
-              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">01</span>
-                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Is this suitable for beginners?</h3>
+              <div className="border-b border-secondary/20 py-3 md:py-5">
+                <button 
+                  className="w-full flex items-center justify-between gap-3 text-left"
+                  onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
+                >
+                  <div className="flex items-center gap-3 md:gap-6">
+                    <span className="font-numeric-data text-xs md:text-base text-secondary">01</span>
+                    <h3 className="font-headline-sm text-sm md:text-lg text-primary-container">Is this suitable for beginners?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
-                </div>
-                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
-                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    Absolutely. The bundle is structured to work for all levels — from understanding what a candlestick is to mastering advanced options strategies. We start with fundamentals and progress to expert-level concepts.
+                  <span className={`material-symbols-outlined text-secondary transition-transform flex-shrink-0 ${openFaq === 1 ? 'rotate-180' : ''}`}>
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-400 ease-out ${openFaq === 1 ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                  <p className="font-body-md text-xs md:text-base text-on-surface-variant pl-6 md:pl-12">
+                    Absolutely. The bundle is structured to work for all levels — from understanding what a candlestick is to mastering advanced options strategies.
                   </p>
                 </div>
               </div>
 
               {/* FAQ Item 2 */}
-              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">02</span>
-                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">How do I access the materials after purchase?</h3>
+              <div className="border-b border-secondary/20 py-3 md:py-5">
+                <button 
+                  className="w-full flex items-center justify-between gap-3 text-left"
+                  onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
+                >
+                  <div className="flex items-center gap-3 md:gap-6">
+                    <span className="font-numeric-data text-xs md:text-base text-secondary">02</span>
+                    <h3 className="font-headline-sm text-sm md:text-lg text-primary-container">How do I access the materials?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
-                </div>
-                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
-                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    Immediately after payment, you&apos;ll receive a download link on-screen and via email. All 15 e-books in PDF format — instant access, no waiting. Download and keep them forever.
+                  <span className={`material-symbols-outlined text-secondary transition-transform flex-shrink-0 ${openFaq === 2 ? 'rotate-180' : ''}`}>
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-400 ease-out ${openFaq === 2 ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                  <p className="font-body-md text-xs md:text-base text-on-surface-variant pl-6 md:pl-12">
+                    Immediately after payment, you&apos;ll receive a download link on-screen and via email. All 15 e-books in PDF format — instant access.
                   </p>
                 </div>
               </div>
 
               {/* FAQ Item 3 */}
-              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">03</span>
-                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Are the strategies applicable to Crypto or Forex?</h3>
+              <div className="border-b border-secondary/20 py-3 md:py-5">
+                <button 
+                  className="w-full flex items-center justify-between gap-3 text-left"
+                  onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
+                >
+                  <div className="flex items-center gap-3 md:gap-6">
+                    <span className="font-numeric-data text-xs md:text-base text-secondary">03</span>
+                    <h3 className="font-headline-sm text-sm md:text-lg text-primary-container">Crypto or Forex applicable?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
-                </div>
-                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
-                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    Yes. While focused on stock markets, the core principles — technical analysis, risk management, trading psychology — apply across all financial markets including crypto, forex, and commodities.
+                  <span className={`material-symbols-outlined text-secondary transition-transform flex-shrink-0 ${openFaq === 3 ? 'rotate-180' : ''}`}>
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-400 ease-out ${openFaq === 3 ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                  <p className="font-body-md text-xs md:text-base text-on-surface-variant pl-6 md:pl-12">
+                    Yes. The core principles apply across all financial markets including crypto, forex, and commodities.
                   </p>
                 </div>
               </div>
 
               {/* FAQ Item 4 */}
-              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 md:gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">04</span>
-                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Do I get lifetime access?</h3>
+              <div className="border-b border-secondary/20 py-3 md:py-5">
+                <button 
+                  className="w-full flex items-center justify-between gap-3 text-left"
+                  onClick={() => setOpenFaq(openFaq === 4 ? null : 4)}
+                >
+                  <div className="flex items-center gap-3 md:gap-6">
+                    <span className="font-numeric-data text-xs md:text-base text-secondary">04</span>
+                    <h3 className="font-headline-sm text-sm md:text-lg text-primary-container">Do I get lifetime access?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
-                </div>
-                <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-400 ease-out">
-                  <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    Once purchased, the PDFs are yours to keep forever. Download them anytime, access on any device — phone, tablet, laptop, or Kindle. No recurring fees, ever.
+                  <span className={`material-symbols-outlined text-secondary transition-transform flex-shrink-0 ${openFaq === 4 ? 'rotate-180' : ''}`}>
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-400 ease-out ${openFaq === 4 ? 'max-h-40 mt-2' : 'max-h-0'}`}>
+                  <p className="font-body-md text-xs md:text-base text-on-surface-variant pl-6 md:pl-12">
+                    Once purchased, the PDFs are yours to keep forever. No recurring fees, ever.
                   </p>
                 </div>
               </div>
