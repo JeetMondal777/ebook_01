@@ -26,6 +26,69 @@ export default function Home() {
         .ambient-shadow {
           box-shadow: 0 10px 40px -10px rgba(0, 27, 61, 0.15);
         }
+        .premium-shadow {
+          box-shadow: 0 25px 60px -15px rgba(0, 27, 61, 0.25), 0 0 80px -20px rgba(119, 90, 25, 0.15);
+        }
+        
+        /* Hero Animations */
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUpSlow {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes goldGlow {
+          0%, 100% { box-shadow: 0 10px 40px -10px rgba(119, 90, 25, 0.3); }
+          50% { box-shadow: 0 10px 50px -10px rgba(119, 90, 25, 0.5); }
+        }
+        
+        .hero-animate-1 { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .hero-animate-2 { animation: fadeInUp 0.8s ease-out 0.15s forwards; opacity: 0; }
+        .hero-animate-3 { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+        .hero-animate-4 { animation: fadeInUp 0.8s ease-out 0.45s forwards; opacity: 0; }
+        .hero-animate-5 { animation: fadeInUpSlow 1s ease-out 0.6s forwards; opacity: 0; }
+        
+        .chart-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .btn-shimmer {
+          background: linear-gradient(135deg, #785a1a 0%, #e9c176 25%, #d4b85a 50%, #e9c176 75%, #785a1a 100%);
+          background-size: 200% 100%;
+          animation: shimmer 3s linear infinite;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-shimmer:hover {
+          animation: shimmer 1s linear infinite, goldGlow 2s ease-in-out infinite;
+          transform: translateY(-4px) scale(1.03);
+          box-shadow: 0 20px 50px -10px rgba(119, 90, 25, 0.5), 0 0 30px -5px rgba(119, 90, 25, 0.3);
+        }
+        .btn-shimmer:active {
+          transform: translateY(-1px) scale(1.01);
+          transition: transform 0.1s ease;
+        }
         
         @keyframes ticker {
           0% { transform: translateX(0); }
@@ -38,6 +101,14 @@ export default function Home() {
         }
         .ticker-track:hover {
           animation-play-state: paused;
+        }
+        
+        /* Background mesh gradient */
+        .hero-bg {
+          background: 
+            radial-gradient(ellipse 80% 50% at 100% -10%, rgba(119, 90, 25, 0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 0% 80%, rgba(0, 27, 61, 0.05) 0%, transparent 50%),
+            linear-gradient(180deg, #f9f9fc 0%, #f3f3f6 100%);
         }
       `}</style>
 
@@ -60,34 +131,64 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 px-5 md:px-16 max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <span className="h-px w-8 bg-secondary"></span>
-              <span className="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Institutional Intelligence</span>
-            </div>
-            <h1 className="font-headline-lg text-headline-lg text-primary-container">
-              Master The Stock Market Before It Masters You
-            </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-              Unlocking probable strategies for financial freedom. Gain access to the confidential blueprints used by elite traders and bespoke financial boutiques.
-            </p>
-            <div className="pt-4">
-              <button className="bg-gradient-gold text-on-primary px-8 py-4 font-label-caps text-label-caps uppercase tracking-widest hover:opacity-90 transition-opacity w-full md:w-auto text-center">
-                UNLOCK YOUR BUNDLE NOW - ₹375 ONLY
-              </button>
-              <p className="font-numeric-data text-numeric-data text-on-surface-variant mt-2 text-center md:text-left">
-                Original Value: ₹23,000
-              </p>
-            </div>
-          </div>
-          <div className="relative w-full h-[500px]   p-8 flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center justify-center py-24 md:py-32 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
             <Image 
               src={tradingviewImg} 
-              alt="TradingView Chart" 
+              alt="TradingView Chart Background" 
               fill 
-              className="object-contain mix-blend-multiply"
+              className="object-cover opacity-40 mix-blend-multiply"
             />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/70 to-background/90"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-transparent to-primary-container/5"></div>
+          </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 border border-secondary/10 rounded-full"></div>
+          <div className="absolute bottom-32 right-20 w-20 h-20 border border-secondary/20 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-secondary/30 rounded-full"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-secondary/20 rounded-full"></div>
+          
+          {/* Content */}
+          <div className="relative z-10 px-5 md:px-16 max-w-[900px] mx-auto text-center">
+            <div className="hero-animate-1 flex items-center justify-center gap-4 mb-6">
+              <span className="h-px w-12 bg-secondary"></span>
+              <span className="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase">Institutional Intelligence</span>
+              <span className="h-px w-12 bg-secondary"></span>
+            </div>
+            
+            <h1 className="hero-animate-2 font-headline-lg text-[42px] md:text-[56px] lg:text-[68px] leading-[1.05] text-primary-container tracking-tight mb-8">
+              Master The <span className="text-gradient-gold">Stock Market</span> Before It Masters You
+            </h1>
+            
+            <p className="hero-animate-3 font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10">
+              Unlocking probable strategies for financial freedom. Gain access to the confidential blueprints used by elite traders and bespoke financial boutiques.
+            </p>
+            
+            <div className="hero-animate-4 flex flex-col items-center gap-6">
+              <button className="btn-shimmer text-on-primary px-12 py-6 font-label-caps text-label-caps uppercase tracking-[0.15em] rounded-lg">
+                UNLOCK YOUR BUNDLE NOW — ₹375 ONLY
+              </button>
+              
+              <div className="flex items-center justify-center gap-3">
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+                <span className="font-numeric-data text-numeric-data text-on-surface-variant">
+                  4,200+ traders enrolled
+                </span>
+              </div>
+              
+              <p className="font-numeric-data text-numeric-data text-secondary font-semibold">
+                Original Value: <span className="line-through text-on-surface-variant">₹23,000</span> — You save ₹22,625
+              </p>
+            </div>
           </div>
         </section>
 
@@ -381,42 +482,69 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Premium FAQ Section */}
-        <section className="py-20 bg-surface-container-lowest px-5 md:px-16 max-w-[1280px] mx-auto">
+        {/* FAQ Section */}
+        <section className="py-16 md:py-20 bg-surface-container-lowest px-5 md:px-16 max-w-[1280px] mx-auto">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-headline-md text-headline-md text-primary-container mb-12 text-center">Inquiries</h2>
+            <div className="text-center mb-10">
+              <p className="font-body-md text-body-md text-on-surface-variant">
+                Have questions? We&apos;ve got answers.
+              </p>
+            </div>
             <div className="space-y-0">
               {/* FAQ Item 1 */}
-              <div className="border-b border-secondary border-opacity-30 py-6 group cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary">01</span>
-                    <h3 className="font-headline-sm text-[20px] text-primary-container group-hover:text-secondary transition-colors">Is this suitable for beginners?</h3>
+              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">01</span>
+                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Is this suitable for beginners?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
+                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
+                  Absolutely. The bundle is structured to work for all levels — from understanding what a candlestick is to mastering advanced options strategies. We start with fundamentals and progress to expert-level concepts.
+                </p>
               </div>
 
               {/* FAQ Item 2 */}
-              <div className="border-b border-secondary border-opacity-30 py-6 group cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary">02</span>
-                    <h3 className="font-headline-sm text-[20px] text-primary-container group-hover:text-secondary transition-colors">How do I access the materials after purchase?</h3>
+              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">02</span>
+                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">How do I access the materials after purchase?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
+                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
+                  Immediately after payment, you&apos;ll receive a download link on-screen and via email. All 15 e-books in PDF format — instant access, no waiting. Download and keep them forever.
+                </p>
               </div>
 
               {/* FAQ Item 3 */}
-              <div className="border-b border-secondary border-opacity-30 py-6 group cursor-pointer">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <span className="font-numeric-data text-numeric-data text-secondary">03</span>
-                    <h3 className="font-headline-sm text-[20px] text-primary-container group-hover:text-secondary transition-colors">Are the strategies applicable to Crypto or Forex?</h3>
+              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">03</span>
+                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Are the strategies applicable to Crypto or Forex?</h3>
                   </div>
-                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
                 </div>
+                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
+                  Yes. While focused on stock markets, the core principles — technical analysis, risk management, trading psychology — apply across all financial markets including crypto, forex, and commodities.
+                </p>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="border-b border-secondary/20 py-4 md:py-5 group cursor-pointer">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4 md:gap-6">
+                    <span className="font-numeric-data text-numeric-data text-secondary text-sm md:text-base">04</span>
+                    <h3 className="font-headline-sm text-[16px] md:text-[18px] lg:text-[20px] text-primary-container group-hover:text-secondary transition-colors">Do I get lifetime access?</h3>
+                  </div>
+                  <span className="material-symbols-outlined text-secondary transition-transform group-hover:rotate-180 flex-shrink-0">keyboard_arrow_down</span>
+                </div>
+                <p className="font-body-md text-body-md text-on-surface-variant mt-3 pl-8 md:pl-12 text-sm md:text-base">
+                  Once purchased, the PDFs are yours to keep forever. Download them anytime, access on any device — phone, tablet, laptop, or Kindle. No recurring fees, ever.
+                </p>
               </div>
             </div>
           </div>
@@ -435,25 +563,25 @@ export default function Home() {
           <div className="flex flex-col gap-3">
             <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 relative group" href="#">
               Terms of Service
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-full h-px bg-secondary scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-50"></span>
             </a>
             <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 relative group" href="#">
               Privacy Policy
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-full h-px bg-secondary scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-50"></span>
             </a>
             <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 relative group" href="#">
               Regulatory Disclosure
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-full h-px bg-secondary scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-50"></span>
             </a>
           </div>
           <div className="flex flex-col gap-3">
             <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 relative group" href="#">
               Support
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-full h-px bg-secondary scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-50"></span>
             </a>
             <a className="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 relative group" href="#">
               Contact
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-secondary transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-full h-px bg-secondary scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-50"></span>
             </a>
           </div>
         </div>
