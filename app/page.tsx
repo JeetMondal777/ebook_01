@@ -321,10 +321,10 @@ export default function Home() {
             <div className="ticker-track gap-3 md:gap-6 px-3 md:px-6">
               <div className="flex gap-3 md:gap-6">
                 {/* Review 1 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px]">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;The clarity on institutional order flow changed everything.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;The clarity on institutional order flow changed everything.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
@@ -336,27 +336,27 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Review 2 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
-                  <div className="mb-2 md:mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;I recovered my entire investment in first week.&quot;</p>
+                {/* Review 2 - Blue Featured */}
+                <div className="w-60 md:w-96 flex-shrink-0 bg-primary-container text-on-primary p-3 md:p-8 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[220px] transform -translate-y-2 md:-translate-y-4">
+                  <div className="mb-2 md:mb-6">
+                    <span className="material-symbols-outlined text-secondary text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-[18px] leading-tight md:leading-normal line-clamp-2 md:line-clamp-none">&quot;I recovered my entire initial investment within the first week of applying the Candlestick methodologies.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                  <div className="flex items-center justify-between border-t border-secondary border-opacity-30 pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">SP</span>
+                      <div className="w-6 h-6 md:w-12 md:h-12 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-primary-container text-[10px] md:text-base">SP</span>
                       </div>
-                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">S. Patel</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-secondary-fixed">S. Patel</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 3 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px]">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Finally, a resource that cuts through retail noise.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;Finally, a resource that cuts through the retail noise. Pure, unadulterated market mechanics.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
@@ -369,10 +369,10 @@ export default function Home() {
                 </div>
 
                 {/* Review 4 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px] transform translate-y-2 md:translate-y-4">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Risk management frameworks worth 10x price.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;The risk management frameworks alone are worth 10x the price of this bundle.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
@@ -388,10 +388,10 @@ export default function Home() {
               {/* Duplicate for seamless loop */}
               <div className="flex gap-3 md:gap-6">
                 {/* Review 1 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px]">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;The clarity on institutional order flow changed everything.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;The clarity on institutional order flow changed everything.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
@@ -403,27 +403,27 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Review 2 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
-                  <div className="mb-2 md:mb-4">
-                    <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;I recovered my entire investment in first week.&quot;</p>
+                {/* Review 2 - Blue Featured */}
+                <div className="w-60 md:w-96 flex-shrink-0 bg-primary-container text-on-primary p-3 md:p-8 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[220px] transform -translate-y-2 md:-translate-y-4">
+                  <div className="mb-2 md:mb-6">
+                    <span className="material-symbols-outlined text-secondary text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
+                    <p className="font-body-md text-[11px] md:text-[18px] leading-tight md:leading-normal line-clamp-2 md:line-clamp-none">&quot;I recovered my entire initial investment within the first week of applying the Candlestick methodologies.&quot;</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
+                  <div className="flex items-center justify-between border-t border-secondary border-opacity-30 pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-6 h-6 md:w-10 md:h-10 bg-surface-variant rounded-full overflow-hidden">
-                        <span className="flex items-center justify-center w-full h-full text-secondary text-[10px] md:text-sm">SP</span>
+                      <div className="w-6 h-6 md:w-12 md:h-12 bg-surface-variant rounded-full overflow-hidden">
+                        <span className="flex items-center justify-center w-full h-full text-primary-container text-[10px] md:text-base">SP</span>
                       </div>
-                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-on-surface-variant">S. Patel</span>
+                      <span className="font-numeric-data text-[10px] md:text-numeric-data text-secondary-fixed">S. Patel</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Review 3 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px]">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Finally, a resource that cuts through retail noise.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;Finally, a resource that cuts through the retail noise. Pure, unadulterated market mechanics.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
@@ -436,10 +436,10 @@ export default function Home() {
                 </div>
 
                 {/* Review 4 */}
-                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:h-[200px]">
+                <div className="w-56 md:w-80 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-3 md:p-6 ambient-shadow flex flex-col justify-between h-[140px] md:min-h-[200px] transform translate-y-2 md:translate-y-4">
                   <div className="mb-2 md:mb-4">
                     <span className="material-symbols-outlined text-secondary text-opacity-50 text-[16px] md:text-[32px] mb-1 md:mb-2">format_quote</span>
-                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2">&quot;Risk management frameworks worth 10x price.&quot;</p>
+                    <p className="font-body-md text-[11px] md:text-body-md text-primary-container italic line-clamp-2 md:line-clamp-none">&quot;The risk management frameworks alone are worth 10x the price of this bundle.&quot;</p>
                   </div>
                   <div className="flex items-center justify-between border-t border-outline-variant pt-2 md:pt-4">
                     <div className="flex items-center gap-2 md:gap-3">
